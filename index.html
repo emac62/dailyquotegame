@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Quoted</title>
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar">
+      <div class="container-fluid">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#infoModal"><img
+                src="img/InfoIcon.png" alt=""></button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#endOfGameModal">End</button>
+          </li>
+        </ul>
+        <div class="ps-5">
+          <h3 class="navbar-brand title">Daily Quote</h3>
+        </div>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-link">
+            <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#statsModal"><img
+                src="img/StatsIcon.png" alt=""></button>
+          </li>
+          <li class="nav-link">
+            <button type="button" class="linkBtn" data-bs-toggle="modal" data-bs-target="#settingsModal"><img
+                src="img/SettingsIcon.png" alt=""></button>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Modals -->
+
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLabel">Quoted</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>A cross between Wheel of Fortune and Wordle.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">Info</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="statsModalLabel">Statistics</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="stats-container">
+              <div class="header-row">
+                <div class="stats-header">Played</div>
+                <div class="stats-header">Won</div>
+                <div class="stats-header">% Won</div>
+                <div class="stats-header">Current Streak</div>
+                <div class="stats-header">Max Streak</div>
+                <div class="stats-header">Average Letters</div>
+              </div>
+              <div class="stats-row">
+                <div class="stat played">0</div>
+                <div class="stat won">0</div>
+                <div class="stat winPercentage">0</div>
+                <div class="stat currentStreak">0</div>
+                <div class="stat maxStreak">0</div>
+                <div class="stat averageLetters">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="hardModeSwitch">
+              <label class="form-check-label" for="hardModeSwitch">Hard Mode</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="practiceModeSwitch">
+              <label class="form-check-label" for="practiceModeSwitch">Practice Mode</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="endOfGameModal" tabindex="-1" aria-labelledby="endOfGameModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="endOfGameModalLabel">Quote and Author</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="blockquote"></div>
+            <div class="float-end" id="author"></div>
+            <h5>Statistics</h5>
+            <div class="stats-container">
+              <div class="header-row">
+                <div class="stats-header">Played</div>
+                <div class="stats-header">Won</div>
+                <div class="stats-header">% Won</div>
+                <div class="stats-header">Current Streak</div>
+                <div class="stats-header">Max Streak</div>
+                <div class="stats-header">Average Letters</div>
+              </div>
+              <div class="stats-row">
+                <div class="stat played">0</div>
+                <div class="stat won">0</div>
+                <div class="stat winPercentage">0</div>
+                <div class="stat currentStreak">0</div>
+                <div class="stat maxStreak">0</div>
+                <div class="stat averageLetters">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="footer-container">
+              <div class="time-section text-center">
+                <div>Next Quote</div>
+                <div class="next-quote">
+                  <span id="countdown"></span>
+                </div>
+              </div>
+              <div class="share-section">
+                <button type="button" class="btn btn-secondary shareBtn">Share</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <div class="container">
+    <div id="toast"></div>
+
+
+    <div class="game-board-container">
+      <div id="game-board">
+      </div>
+    </div>
+    <div>
+      <h6 class="text-center"><span id="guessCount">0</span>/10 Letters Guessed</h6>
+    </div>
+    <div id="keyboard-cont">
+      <div class="first-row">
+        <button class="keyboard-button" id="q">q</button>
+        <button class="keyboard-button" id="" w>w</button>
+        <button class="keyboard-button" id="e">e</button>
+        <button class="keyboard-button" id="r">r</button>
+        <button class="keyboard-button" id="t">t</button>
+        <button class="keyboard-button" id="y">y</button>
+        <button class="keyboard-button" id="u">u</button>
+        <button class="keyboard-button" id="i">i</button>
+        <button class="keyboard-button" id="o">o</button>
+        <button class="keyboard-button" id="p">p</button>
+        <button class="keyboard-button wideBtn" id="del">Del</button>
+      </div>
+      <div class="second-row" id="">
+        <button class="keyboard-button" id="a">a</button>
+        <button class="keyboard-button" id="s">s</button>
+        <button class="keyboard-button" id="d">d</button>
+        <button class="keyboard-button" id="f">f</button>
+        <button class="keyboard-button" id="g">g</button>
+        <button class="keyboard-button" id="h">h</button>
+        <button class="keyboard-button" id="j">j</button>
+        <button class="keyboard-button" id="k">k</button>
+        <button class="keyboard-button" id="l">l</button>
+        <button class="keyboard-button" id="'">'</button>
+      </div>
+      <div class="third-row" id="">
+
+        <button class="keyboard-button" id="z">z</button>
+        <button class="keyboard-button" id="x">x</button>
+        <button class="keyboard-button" id="c">c</button>
+        <button class="keyboard-button" id="v">v</button>
+        <button class="keyboard-button" id="b">b</button>
+        <button class="keyboard-button" id="n">n</button>
+        <button class="keyboard-button" id="m">m</button>
+        <button class="keyboard-button" id=",">,</button>
+
+        <button class="keyboard-button wideBtn" id="enter">Enter</button>
+      </div>
+      <div class="fourth-row" id="">
+        <button class="keyboard-button spaceBtn" id="space">space</button>
+      </div>
+      <div class="solve">
+        <button class="keyboard-button" id="solveBtn">Guess the Quote</button>
+      </div>
+    </div>
+
+    <!-- <div id="picked-letters">
+    </div> -->
+  </div>
+  <footer class="footer mt-auto">
+    <div class="banner-ad text-center pt-4">Future Banner Ad</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="script.js" type="module"></script>
+  <!-- <script src="switch.js"></script> -->
+  <script src="countdown.js"></script>
+
+  <script>
+    $(window).on('load', function () {
+      let firstTime = false
+      if (firstTime) {
+        $('#aboutModal').modal('show');
+      }
+    });
+
+    $("#hardModeSwitch").change(function () {
+      if ($(this).prop("checked") == true) {
+        document.getElementById("space").classList.add("hidden")
+      } else {
+        document.getElementById("space").classList.remove("hidden")
+      }
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
